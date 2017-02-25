@@ -7,11 +7,22 @@
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
+  "content_scripts": [
+  	{
+  		"matches": [ "*://mail.google.com/*" ],
+  		"js":[
+  			"jquery-1.10.2.min.js",
+  			"gmail.js",
+  			"popup.js"
+  		],
+  		"run_at": "document_end"
+  	}
+  ],
+
   "permissions" : [
   	"activeTab"
   	],
    "web_accessible_resources": [
     "gmail.js"
   ],
-   "content_security_policy": "script-src 'self' https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js https://s3.amazonaws.com/kartikt/gmail.js; object-src; object-src 'self'"
 }
