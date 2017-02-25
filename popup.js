@@ -6,19 +6,22 @@
 
 console.log('hello!');
 
-$(document).ready(function(){
-	let gmail = new Gmail();
-	let body = gmail.dom.email_contents();
-	console.log(body);
+//setTimeout(function(){
+	$(document).ready(function(){
+		let gmail = new Gmail();
+		console.log(gmail);
+		let body = gmail.dom.email_contents();
+		console.log(body);
 
-	let email = gmail.get.user_email();
-	console.log(email);
+		let email = gmail.get.user_email();
+		console.log(email);
 
-	var body_text = $(body).text();
-	console.log(body_text);
-
-	$("#checkPage").on("click", function() {
+		var body_text = $(body).text();
 		console.log(body_text);
 
+		$("#checkPage").on("click", function() {
+			console.log(body_text);
+
+		});
 	});
-});
+//}, 100);
