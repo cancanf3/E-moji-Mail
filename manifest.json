@@ -18,6 +18,9 @@
   		"run_at": "document_end"
   	}
   ],
+  "web_accessible_resources": [
+    	"extension.js"
+   ],
 
   "permissions" : [
   	"https://*/*"
