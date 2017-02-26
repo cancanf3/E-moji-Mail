@@ -22,7 +22,7 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
             data: text,
 
             success:function(respond) {
-                console.log(respond["body"]);
+                alert(respond["body"]);
             },
             error:function (xhr, ajaxOptions, thrownError){
               alert(thrownError);
