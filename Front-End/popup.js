@@ -18,13 +18,11 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
     var text = ($(body).text());
     $.ajax( {
             type: 'POST',
-            url: 'https://b0a137c6.ngrok.io/e-moji/webresources/service',
+            url: 'https://19398ddd.ngrok.io/e-moji/webresources/service',
             data: text,
 
             success:function(respond) {
                 console.log(respond["body"]);
-            // Code to show the emoji // 
-   
             },
             error:function (xhr, ajaxOptions, thrownError){
               alert(thrownError);
