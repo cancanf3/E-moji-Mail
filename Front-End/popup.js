@@ -18,7 +18,7 @@ chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
     var text = ($(body).text());
     $.ajax( {
             type: 'POST',
-            url: 'https://19398ddd.ngrok.io/e-moji/webresources/service',
+            url: 'https://c5aab4ae.ngrok.io/e-moji/webresources/service',
             data: text,
 
             success:function(respond) {
