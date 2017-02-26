@@ -11,25 +11,25 @@
 // Creating a Json package to comunicate with the server is waiting for a trigger from the extension to Analyze the text.
 chrome.runtime.onMessage.addListener( function(request, sender, sendResponse) {
     if (request.analyze == true) {
-    	//Here is where the server logic should be
-    	console.log("it worked");
-    	let gmail = new Gmail();
-			let body = gmail.dom.email_contents();
-			var text = ($(body).text());
-			$.ajax( {
-                  type: 'GET',
-                  url: '?????',
-                  data: {BODY_TEXT: text},
+      //Here is where the server logic should be
+      console.log("it worked!");
+      let gmail = new Gmail();
+    let body = gmail.dom.email_contents();
+    var text = ($(body).text());
+    $.ajax( {
+            type: 'POST',
+            url: 'https://b0a137c6.ngrok.io/e-moji/webresources/service',
+            data: text,
 
-                  success:function(respond) {
-                 
-                  	// Code to show the emoji // 
-           
-                  },
-                  error:function (xhr, ajaxOptions, thrownError){
-                    alert(thrownError);
-                  }
-              });
+            success:function(respond) {
+                console.log(respond["body"]);
+            // Code to show the emoji // 
+   
+            },
+            error:function (xhr, ajaxOptions, thrownError){
+              alert(thrownError);
+            }
+        });
  
-    	}
-  });
+    }
+ });
